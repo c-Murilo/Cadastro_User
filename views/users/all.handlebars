@@ -1,0 +1,22 @@
+<h1>Todas os usuários:</h1>
+<ul class="task-list">
+    {{#if emptyUsers}}
+    <p>Não há usuários cadastradas</p>
+    {{/if}}
+    {{#each users}}
+    
+        <li >
+            <a href="/users/edit/{{this.id}}" class="title">{{this.nome}}</a>
+            <span class="actions">
+                <a href="/users/edit/{{this.id}}"><i class="bi bi-pencil-square"></i></a>
+                <form action="/users/remove" method="POST">
+                    <input type="hidden" name="id" value={{this.id}}>
+                    <button type="submit">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </form>
+            </span>
+        </li>
+    
+    {{/each}}
+</ul>

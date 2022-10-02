@@ -1,0 +1,17 @@
+<h1>Editando o usuário: {{user.nome}}</h1>
+<form action="/users/edit" method="POST">
+    <input type="hidden" name="id" value={{user.id}}>
+    <div class="form-control">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" placeholder="Nome" value="{{user.nome}}">
+    </div>
+    <div class="form-control">
+        <label for="cpf">CPF:</label>
+        <input type="text" name="cpf" placeholder="CPF" value="{{user.cpf}}">
+    </div>
+    <div class="form-control">
+        <label for="endereco">Endereço:</label>
+        <input type="text" name="endereco" placeholder="Endereço" value="{{user.endereco}}">
+    </div>
+    <input type="submit" value="Editar">
+</form>
